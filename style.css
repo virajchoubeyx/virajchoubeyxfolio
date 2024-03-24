@@ -4,10 +4,34 @@
     box-sizing: border-box;
 }
 
+header{
+    display: flex;
+    margin: 0 auto;
+}
+
+.main-image{
+    width: 50%;
+    float: left;
+}
+
+.links{
+    width: 50%;
+    float: right;
+    margin: 50px;
+}
+
+.links a{
+    text-align: right;
+    margin-bottom: 15px;
+    display: block;
+    text-decoration: none;
+    color: black;
+}
+
 #logoid{
     width: 450px;
-    margin-left:auto;
-    margin-right:auto;
+    margin-left:20px;
+    /* margin-right:20px; */
     display: block;
 }
 
