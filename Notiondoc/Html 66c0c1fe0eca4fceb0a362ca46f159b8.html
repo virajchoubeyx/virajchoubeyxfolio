@@ -1,0 +1,996 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+	<title>Html</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="66c0c1fe-0eca-4fce-b0a3-62ca46f159b8" class="page sans"><header><h1 class="page-title">Html</h1><p class="page-description"></p></header><div class="page-body"><p id="ddb165d1-3469-4154-acde-16bd84b4d9d2" class="">…</p><p id="67870ef4-2c2d-46a5-bff7-0ea4ad81e492" class="">Hyper text markup language <br/>- Structure of a website is made thru<br/></p><p id="664dadac-9822-44f3-ad6d-77983d54d3ba" class="">
+</p><p id="5df55786-5517-4898-955d-771751aac73b" class="">Html - makes structure / body of a website</p><p id="47aa6b21-ba30-4c27-adde-df87f9b75070" class="">CSS - Cascading style sheet, to add colors and styling</p><p id="20c9f084-db4d-4a23-9231-b534cdbb204f" class="">JavaScript - To add functioning</p><p id="5020838f-4750-4c46-8c36-d62558b76934" class="">
+</p><p id="9f4e1755-1e14-4290-ae98-a73097e23b3b" class="">Always make <code>index.html</code> as a starting/first file of html page, coz web browser starts from it</p><ul id="643c69cb-9bae-4259-9fb2-bad598829544" class="bulleted-list"><li style="list-style-type:disc">Incase of using something else as a first file name, it will not show the page instead it will ask to chose from the list of files.</li></ul><ul id="98e36b4e-864b-4f89-ad71-95ae0d93f20f" class="bulleted-list"><li style="list-style-type:disc"><code>index.htm</code> may or may not work depending upon browser to browser</li></ul><p id="132b829a-7965-4486-bada-77c78d9ab0fc" class="">
+</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="41559758-737e-4d9a-bbcc-c93950b6310c" class="code"><code class="language-HTML" style="white-space:pre-wrap;word-break:break-all">&lt;!DOCTYPE html&gt; -- specifies that this is the html 5 document
+&lt;html&gt; -- root tag of a html page
+  &lt;head&gt; -- contains a meta data
+  &lt;!-- meta tag -&gt; contains data about data --&gt;
+    &lt;title&gt;My First Web Page&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt; -- contains whatever will be displayed
+    &lt;h1&gt;Welcome to My First Web Page!&lt;/h1&gt;
+    &lt;p&gt;This is a paragraph of text.&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre><p id="b219d470-d975-4380-b949-302d14b92569" class="">We can use <code>lorem</code> to write demo contain</p><ul id="5a6115c5-5397-4b6a-a5c1-38fdac3371fa" class="bulleted-list"><li style="list-style-type:disc">like <code>lorem30</code> will generate 30 words long demo para</li></ul><p id="16ad1e40-c598-4870-b996-c57f2c975a94" class="">
+</p><p id="d3dd22f8-f078-4d7c-a021-c299dd6f0255" class="">Always use word wrap to make a good looking html file. use <code>ALT + Z</code> </p><p id="59ddc9bf-8924-4c58-9ce7-c0e806fd8038" class="">
+</p><p id="58d6facd-5737-40cb-ae81-9dac2f29421f" class="">For temporary use, we can inspect each html element. → called as developer tools</p><p id="f40a1f46-079d-4991-92a6-859f996675dc" class="">Responsive website → is the one which works perfectly everywhere</p><ul id="53f0bd1d-c814-4455-bc53-a16c5cc0415f" class="bulleted-list"><li style="list-style-type:disc">Developer tool can be used to check the responsiveness as it allows to turn web page in phone &amp; desktop views.</li></ul><p id="e42c673a-5167-47e2-b729-879c3144b029" class="">
+</p><p id="6cd87cec-324a-42a6-b1f4-4f6c2241bbbb" class="">Tags → Html tags are opening and closing tags, there are some tags which only have opening tags.</p><p id="075fda7f-c64f-4c5d-a0bc-e7cfc84495d3" class="">e.g. → &lt;p&gt;use to write the paragraph body&lt;/p&gt; —&gt; paragraph tag</p><p id="3c38d770-1001-4eb7-bb76-382ed2f78769" class="">
+</p><p id="e1b708e4-3506-46fb-a6f8-4db9e6a0da01" class="">To clone any website → we just need to “view its open source code” and copy it the local file, and the set paths and live it.</p><hr id="189aaafe-7b5f-46a9-8ff0-a91ed1271b18"/><hr id="5916c830-52d2-43ef-bc2d-93419c523ac1"/><p id="7548a100-33b7-42f3-87ae-afaf43f29038" class="">Anchor tag → used for links, that contains a link address</p><p id="d1fee48d-b2c5-4017-9fb6-dc54edef4557" class=""><code>&lt;a href=”#link”&gt;this is the clickable link&lt;/a&gt;</code> </p><p id="f6bb699b-b73b-4ad4-8d9d-2e3e72747521" class="">Attributes → attribute here is <code>href</code> that stores a link address in it, attributes are thing that comes up with the tags. </p><ul id="cb9c887a-dc62-462a-90fe-653f1088b7f5" class="bulleted-list"><li style="list-style-type:disc">note → single quote double quote both will work in <code>href</code></li></ul><p id="4cb7df60-9b03-44f8-9fc9-167767b724d4" class="">
+</p><p id="f01e36f6-7b19-43a2-9505-df9762622c30" class="">Heading tags → &lt;h1&gt;&lt;/h1&gt; ….&lt;h6&gt;&lt;/h6&gt; </p><p id="0ae96f35-ef41-424d-8c05-956959667e5f" class="">unable word wrap to avoid, horizontal scroll bar</p><p id="a2301903-9143-4d51-b1a2-2c8b28841efc" class="">
+</p><p id="9e9e5e26-7d83-4308-b980-3a928646e4db" class="">Example of absolute links <code>&lt;a href=’https://example.com’&gt;This is absolute link&lt;/a&gt;</code> </p><p id="ba5a3b48-fd1a-475b-afc4-cd375ec441be" class="">Example of relative links <code>&lt;a href=’/about.html’&gt;About in same folder&lt;/a&gt;</code></p><p id="9eb3644f-ded6-42ba-bf22-d6891b929005" class="">
+</p><p id="34823c53-e515-4699-aac9-453527f8fc48" class="">Image tag → a tag to add a image on a html page.</p><ul id="f89a62ee-744c-4d56-b648-596eda259052" class="bulleted-list"><li style="list-style-type:disc">It is non closing tag <code>&lt;img src=’/image.jpg’ alt=’here is image’&gt;</code></li></ul><ul id="8f07d9da-102c-42ab-88fe-4de074abb494" class="bulleted-list"><li style="list-style-type:disc">Can use relative n absolute path for image</li></ul><ul id="b7b746d7-8060-4099-b651-4c92fe537615" class="bulleted-list"><li style="list-style-type:disc">alt is a attribute use to give text when the image is unable to load</li></ul><ul id="3b092031-968b-4390-801b-9cc5a5bd9394" class="bulleted-list"><li style="list-style-type:disc">SRC is a attribute, that holds a image address/path</li></ul><ul id="f6304353-fb97-4cca-bd96-290e6e33e35a" class="bulleted-list"><li style="list-style-type:disc"><code>&lt;img src=”#” width=”500px”&gt;</code> width is another attribute that can be use to give size to the pic</li></ul><p id="78ac48f3-4610-4ff7-af19-994bf9d82bf0" class="">
+</p><p id="c7759ade-0372-4c5a-b735-5ca11deb81a5" class=""><strong>Bold </strong><em>Italic </em><span style="border-bottom:0.05em solid">Underline</span> tags</p><ul id="235f4465-abc0-4b45-bb4a-8ac532781ef1" class="bulleted-list"><li style="list-style-type:disc">Bold tag → is use bold the text <code>&lt;b&gt;This is bold&lt;/b&gt;</code></li></ul><ul id="2786e910-8c33-4a9d-931a-ec3547d1c72f" class="bulleted-list"><li style="list-style-type:disc">Italic tag → is use italic the text <code>&lt;i&gt;this is italic &lt;/i&gt;</code></li></ul><ul id="e51bcc2e-cfc9-4f50-b5d6-25a4f6409a1d" class="bulleted-list"><li style="list-style-type:disc">underline tag → use to underline the text <code>&lt;u&gt; this is underline&lt;/u&gt;</code></li></ul><ul id="bea873b8-34fb-40b0-b56c-b99a67ee118b" class="bulleted-list"><li style="list-style-type:disc">all are opening n closing tags </li></ul><p id="59d33512-f827-4a49-a3f7-3222c9fb5400" class="">
+</p><p id="07adc5d4-a6d7-4085-862f-55bf62f722ab" class="">Break tag → to new line <code>&lt;br&gt;</code> tag is use</p><ul id="e94a7703-4980-4859-b120-98e14919fbb6" class="bulleted-list"><li style="list-style-type:disc">this is used when we want a new line</li></ul><p id="9ecb49ed-2ca1-4d7f-b3c4-b4082de236fb" class="">
+</p><p id="9a1263c2-b9cc-4a65-9741-e0ac4b17581e" class="">Small tag n Big tag </p><ul id="f6e54088-2ea0-4a49-b7ca-3727dd2303a4" class="bulleted-list"><li style="list-style-type:disc">nothing just to make text little big n little small </li></ul><ul id="7016a628-fbd2-4df9-aef5-b087a4d2725d" class="bulleted-list"><li style="list-style-type:disc"><code>&lt;small&gt; this txt is small &lt;/small&gt;</code></li></ul><ul id="24609f97-9a78-4236-a6de-6ac97c7e1be9" class="bulleted-list"><li style="list-style-type:disc"><code>&lt;big&gt; this is big &lt;/big&gt;</code> </li></ul><p id="56672ec2-d5c6-412d-a906-0629f8c3ff15" class="">
+</p><p id="c8091c0c-0765-4bd0-8c3e-1ce71e02fa5f" class="">Horizontal role <code>&lt;hr&gt;</code> tag → to add a horizontal divider line</p><ul id="977d5d83-c482-49ac-9587-1b82ceba5d89" class="bulleted-list"><li style="list-style-type:disc">this is use sperate the paragraph or sections in web page</li></ul><p id="10d1046e-f93e-43e1-a0df-3a3701b94833" class="">
+</p><p id="da0b4e80-cca7-48d0-a4ed-ce310e433357" class="">Subscript &amp; Superscript</p><ul id="865edfcf-f8cb-434a-8015-016292e130e7" class="bulleted-list"><li style="list-style-type:disc"><code>&lt;p&gt;CO&lt;sub&gt;2&lt;/sub&gt;&lt;p&gt;</code> - subscript is a tag that use to write CO2</li></ul><ul id="156ea044-1c9d-4bc1-9d10-d6a31c3d79bf" class="bulleted-list"><li style="list-style-type:disc"><code>&lt;p&gt;x&lt;sup&gt;2&lt;/sup&gt;&lt;/p&gt;</code> - superscript is a tag that use to write powers like x2</li></ul><p id="ac4d00f8-7482-434f-a8b5-690c38f5b7b1" class="">
+</p><p id="2aa0e191-eb36-44e2-9cba-0bb41fa3b77a" class="">Pre Tags - Preserve tags</p><ul id="089a37f4-f21e-4076-8a59-60c2bba4b0b8" class="bulleted-list"><li style="list-style-type:disc">this are the tags use to write code in a html mainly</li></ul><ul id="b2f28a54-b6c0-49f7-9cd0-e77e1d5003f6" class="bulleted-list"><li style="list-style-type:disc">html normally ignores extra lines spaces, and display clean aligned things on screen </li></ul><ul id="9b252ef2-44cc-4acd-9a48-7726a81e343d" class="bulleted-list"><li style="list-style-type:disc">but pre tags help to render things as it is on screen as they were copied</li></ul><ul id="d2d777af-8775-4b85-a76a-f6041ba048d9" class="bulleted-list"><li style="list-style-type:disc"><code>&lt;pre&gt;This is the                       text that    has extra spaces.&lt;/pre&gt;</code> </li></ul><p id="41989032-1444-4b20-9683-bef439710903" class="">
+</p><h1 id="569a89d4-ec5b-4952-8f63-5d7d55e06458" class="">Right Professional way to use tags</h1><h3 id="c40e8a23-55dc-4a11-8a76-0af338ed8df5" class="">Header Tag</h3><h3 id="097f7ba5-cf6f-4a93-b11e-d5626df2b857" class="">Main Tag</h3><h3 id="a3bf1993-8279-4040-ace7-dfe2aaa54d8d" class="">Footer Tag</h3><p id="5d665348-8d7a-4dbd-a181-221df5ca71fd" class="">These three tags are used to write the proper html code, this makes sure that how anyone else can understand our code.</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1bc56730-0f66-4a69-a254-2dac48265c06" class="code"><code class="language-HTML">&lt;html&gt;
+&lt;head&gt;
+	&lt;title&gt;This is the title of Page&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+	&lt;header&gt;This is header of the page, which will contain nav tags&lt;/header&gt;
+	&lt;!--comment--&gt;
+	&lt;main&gt;This is the main part of the page&lt;/main&gt;
+	&lt;!--comment--&gt;
+	&lt;footer&gt;this is the footer of the page&lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre><p id="c10f3efe-ce13-47f7-9458-e6da8568a047" class="">
+</p><ul id="ab272e99-40fc-4633-a19b-28ced3d966e5" class="bulleted-list"><li style="list-style-type:disc">It will not display any great changes in page but for better code writing practices it is imp to use such tags.</li></ul><p id="5e64f051-441b-44d7-ba28-39acc81fff9d" class="">
+</p><h3 id="0760c6bf-4606-4cb5-b9d6-a8ca856627ff" class="">Main Tag</h3><p id="83d68e9e-f817-4fcf-8e95-aa4fac09e0ef" class="">This is the tag that will contain main content of the page, tags under it:</p><ul id="17420f2f-9cbd-433c-8b8c-4baa487f0b6e" class="bulleted-list"><li style="list-style-type:disc">Section Tag | Article Tag | Aside Tag</li></ul><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="09b6c098-a521-4391-a907-8292c0c6a3c7" class="code"><code class="language-HTML">&lt;html&gt;
+&lt;head&gt;&lt;/head&gt;
+--
+&lt;body&gt;
+	&lt;header&gt;&lt;/header&gt;
+	&lt;main&gt;
+		&lt;section&gt; A page section. &lt;/section&gt;
+		--
+		&lt;article&gt; A self contained tag for better article or blog writing &lt;/article&gt;
+		--
+		&lt;aside&gt; This is side content - may contains ads &lt;/aside&gt; 
+	&lt;/main&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre><p id="dbc78809-9130-4817-8ae4-2146c70cea7c" class="">Creating a page with these tags helps in better code writing skills and also helps in improving the SEO on browser.</p><p id="02dafbc7-4706-4b4e-8b9d-903c73a0b9e6" class="">
+</p><h3 id="3f9e15a1-4e35-40ab-8cc9-4747ab7e3393" class="">Header Tag</h3><p id="11963ddf-dce4-411f-8e21-67a8ae10de61" class="">This is tag that will contain logo or something that should be in a header, also contains navigation bar…navigation options.</p><ul id="4469e6a5-3a11-4832-ba52-96d32a1f32fe" class="bulleted-list"><li style="list-style-type:disc">&lt;nav&gt;About&lt;/nav&gt; tags are used to write the navigation items</li></ul><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="c2e583ee-893b-4153-b711-9052976dc657" class="code"><code class="language-HTML">&lt;body&gt;
+	&lt;Header&gt;
+		&lt;nav&gt;Home&lt;/nav&gt;
+		&lt;nav&gt;About&lt;/nav&gt;
+		&lt;nav&gt;Contact Us&lt;/nav&gt;
+	&lt;/Header&gt;
+&lt;/body&gt;</code></pre><p id="07ffdc89-b73f-4a73-864d-561579a6426d" class="">
+</p><h3 id="51f9dae9-42e4-484d-8c4a-16bcd2fd652f" class="">&lt;a&gt;Anchor Tag&lt;/a&gt;</h3><p id="1f0f858a-468d-4283-8631-8e1cb5351e03" class="">anchor tag has some more attributes that help in better code writing </p><ul id="75af757e-cc58-428b-9bdc-d113bfdb4af3" class="bulleted-list"><li style="list-style-type:disc">Target Attribute → helps in open the link in particular way or page</li></ul><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="52a0248b-b083-402c-99f8-d8e9d00960bf" class="code"><code class="language-HTML">&lt;a href=&#x27;xyz.com&#x27; target=&#x27;_main&#x27;&gt;
+This will open the main page of xyz.com
+&lt;/a&gt;
+
+--
+&lt;a href=&#x27;xyz.com&#x27;&gt;This will open the xyz.com in same tab&lt;/a&gt;
+--
+&lt;a href=&#x27;xyz.com&#x27; target=&#x27;_blank&#x27;&gt;This will open the xyz.com in a new tab&lt;/a&gt;</code></pre><p id="d3a3b010-c612-41f8-84ab-afaa31c1b456" class="">Anchor tag may contains image, text, anything as a element in between.</p><p id="8a90237a-8a3e-4f37-b994-b35177e59517" class="">
+</p><p id="6c0c739d-797c-4a92-aec8-942aaff586f9" class=""><strong><em>Aspect Ration →</em></strong> in a image tag we should set either height or width to make it auto set the image.</p><p id="52501e28-34ac-437c-a37a-e2e6c5b3e15b" class="">
+</p><h3 id="3449b3dd-7c5d-4c37-9647-b49b69a2c88b" class="">The <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi><mi>i</mi><mi>v</mi></mrow><annotation encoding="application/x-tex">Div</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">D</span><span class="mord mathnormal">i</span><span class="mord mathnormal" style="margin-right:0.03588em;">v</span></span></span></span></span><span>﻿</span></span> Tag </h3><p id="ead7cd10-0944-4cd0-8598-df0898b487ed" class=""><strong>It is a block tag that always take full-width</strong> </p><ul id="b978cb6a-928c-4395-b1a2-d635d3d2506f" class="bulleted-list"><li style="list-style-type:disc">It is used as a container, it is block level tag.</li></ul><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="55394e98-f32e-4676-afb4-db3ff9ade917" class="code"><code class="language-HTML">&lt;div&gt;This is the particular div section&lt;/div&gt;</code></pre><p id="a7e543e4-adf4-4eec-8e7d-45dcdfb0311a" class="">It is a full width/block level container.</p><h3 id="a274bcea-d8bb-48f2-8e05-a5d8f9d68719" class="">The <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>S</mi><mi>p</mi><mi>a</mi><mi>n</mi></mrow><annotation encoding="application/x-tex">Span</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8778em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">Sp</span><span class="mord mathnormal">an</span></span></span></span></span><span>﻿</span></span> Tag</h3><p id="0a1e9874-3af9-4f73-b85a-70e410603900" class="">It is in-line tag that only uses the spaces how much it is required, with the use of this tag one line can contain more than one element in it. <br/>Note- &lt;p&gt; paragraph tag is a block level tag.<br/></p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="3840e3ac-91ea-4ba4-9adc-0a08ad4f55f4" class="code"><code class="language-HTML">&lt;span&gt; This is the span tag that is in-line level &lt;/span&gt;</code></pre><p id="3f905e87-e8f8-4944-94fe-4ab581dbc4c0" class="">It is a in-line container.</p><p id="a2ba98a0-0518-4483-8bb6-a00be444d297" class="">
+</p><figure id="6dfec69c-49b4-4c0e-bae3-4cbc356b9466" class="block-color-blue link-to-page"><a href="https://www.notion.so/List-of-In-line-n-block-element-6dfec69c49b44c0ebae34cbc356b9466?pvs=21">List of In-line n block element</a></figure><p id="ba3e02fc-ddf5-421f-85b4-d4746e54e198" class="">
+</p><h3 id="e8e4f65e-35c9-4bf2-804e-447c1fb37d1c" class="">Lists → Ordered list &amp; Unordered list</h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="64ef4ea3-f1b0-4d55-83a8-cc1e6a245e32" class="code"><code class="language-HTML">--Ordered list-- (gives count/numbers)
+&lt;ol&gt;
+	&lt;li&gt;This is list item.&lt;/li&gt;
+&lt;/ol&gt;
+
+--unordered list-- (give notations/just list casually)
+&lt;ul&gt;
+	&lt;li&gt;This is list item.&lt;/li&gt;
+&lt;/ul&gt;</code></pre><ul id="d8201d5d-4748-4e10-9c36-c7a077d0322a" class="bulleted-list"><li style="list-style-type:disc">Uses list-item tag <code>&lt;li&gt;apple&lt;/li&gt;</code> </li></ul><ul id="2a561917-ba2c-4d5b-addc-b9cda3bb0f26" class="bulleted-list"><li style="list-style-type:disc"><code>type</code> attribute is use to modifying the listing style.</li></ul><p id="d936327c-932f-4f2a-8a4d-8dbae091bcbd" class="">
+</p><h3 id="b2ef65a8-ed92-4981-b87b-94eecefb01ef" class="">Tables in html</h3><p id="177329f3-5ec2-46f9-b0f7-371a7723ad2d" class="">Table tag is use to write tables in html page, to have data in form of tabular form.</p><p id="be47a2b9-55ca-441f-b59e-a5b384205f8a" class=""><code>&lt;table&gt;&lt;/table&gt;</code></p><p id="ec169c48-10a1-439f-9146-9e30fecdb347" class="">It contains following sub tags in it:</p><ul id="478d3dd6-0989-4cfb-876e-1ab8073ec2a9" class="bulleted-list"><li style="list-style-type:disc"><code>&lt;tr&gt;</code> table row tag</li></ul><ul id="3192c659-5b27-4af5-ad2e-81d630f98af7" class="bulleted-list"><li style="list-style-type:disc"><code>&lt;th&gt;</code> table header tag - use to set header</li></ul><ul id="5c898af5-d7c4-40c7-b2d9-be05643302b2" class="bulleted-list"><li style="list-style-type:disc"><code>&lt;td&gt;</code> table data tag - use to set data</li></ul><p id="47e159cf-85f2-4642-9295-9c6cb3740a47" class="">Always we use <code>&lt;tr&gt;</code> tag under which <code>&lt;th&gt;</code> and <code>&lt;td&gt;</code> tags</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="82b84eda-1efd-42ac-8353-0ad28194f8f5" class="code"><code class="language-HTML">&lt;body&gt;
+	&lt;div&gt;
+		&lt;table&gt;
+		--table tag--
+			&lt;tr&gt;
+			-- first row -- which will always contain table headers
+				&lt;th&gt;name&lt;/th&gt;
+				&lt;th&gt;number&lt;/th&gt;
+				&lt;th&gt;email&lt;/th&gt;
+				&lt;th&gt;address&lt;/th&gt;
+				-- table header -- will used only once to show headings of table
+			&lt;/tr&gt;
+			--- comment ---
+			&lt;tr&gt;
+			-- another row -- this will contain data in it
+				&lt;td&gt;Viraj&lt;/td&gt;
+				&lt;td&gt;123456XXXX&lt;/td&gt;
+				&lt;td&gt;xyz@gmail.com&lt;/td&gt;
+				&lt;td&gt;123, street city state&lt;/td&gt;
+				-- table data -- data will be stored using it
+			&lt;/tr&gt;
+		&lt;/table&gt;
+	&lt;/div&gt;
+&lt;/body&gt;</code></pre><p id="e66b2163-101c-4ef8-bdd0-f4044d01624d" class="">
+</p><p id="4153278f-c53b-428e-91be-5f9f203e036a" class="">More tags used inside the &lt;table&gt; tag</p><p id="b2a253c4-32ea-4247-9072-6c3086dffb7e" class=""><strong>Caption tag → </strong>use to add caption to the table like a heading (like…what is the aim of table)</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="7c01e4b0-e101-40b7-b8aa-3ceeca51a8a1" class="code"><code class="language-HTML">&lt;body&gt;
+	&lt;div&gt;
+		&lt;table&gt;
+		--table tag--
+		
+			&lt;caption&gt;People&#x27;s contact details&lt;/caption&gt;
+		
+			&lt;tr&gt;
+			-- first row -- which will always contain table headers
+				&lt;th&gt;name&lt;/th&gt;
+				&lt;th&gt;number&lt;/th&gt;
+				&lt;th&gt;email&lt;/th&gt;
+				&lt;th&gt;address&lt;/th&gt;
+				-- table header -- will used only once to show headings of table
+			&lt;/tr&gt;
+			--- comment ---
+			&lt;tr&gt;
+			-- another row -- this will contain data in it
+				&lt;td&gt;Viraj&lt;/td&gt;
+				&lt;td&gt;123456XXXX&lt;/td&gt;
+				&lt;td&gt;xyz@gmail.com&lt;/td&gt;
+				&lt;td&gt;123, street city state&lt;/td&gt;
+				-- table data -- data will be stored using it
+			&lt;/tr&gt;
+		&lt;/table&gt;
+	&lt;/div&gt;
+&lt;/body&gt;</code></pre><p id="00d50858-e8ac-4ed8-9f54-32a8e5b5dc61" class="">
+</p><h3 id="616219a6-bb99-46d5-9aad-09644f0900fb" class=""><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi><mi>h</mi><mi>e</mi><mi>a</mi><mi>d</mi></mrow><annotation encoding="application/x-tex">thead</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal">t</span><span class="mord mathnormal">h</span><span class="mord mathnormal">e</span><span class="mord mathnormal">a</span><span class="mord mathnormal">d</span></span></span></span></span><span>﻿</span></span> tag &amp; <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi><mi>b</mi><mi>o</mi><mi>d</mi><mi>y</mi></mrow><annotation encoding="application/x-tex">tbody</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">t</span><span class="mord mathnormal">b</span><span class="mord mathnormal">o</span><span class="mord mathnormal">d</span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span></span></span></span></span><span>﻿</span></span> tag</h3><p id="30393d62-ba43-4569-a402-0b66c786b38a" class="">these tags are use to specify the table areas specifically, — used inside the table tag</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="b0314759-9801-47aa-b702-a2745973f224" class="code"><code class="language-HTML">&lt;body&gt;
+	&lt;div&gt;
+		&lt;table&gt;
+		--table tag--
+		
+			&lt;caption&gt;People&#x27;s contact details&lt;/caption&gt;
+		
+		&lt;thead&gt;
+		-- table head starts from here --
+			&lt;tr&gt;
+			-- first row -- which will always contain table headers
+				&lt;th&gt;name&lt;/th&gt;
+				&lt;th&gt;number&lt;/th&gt;
+				&lt;th&gt;email&lt;/th&gt;
+				&lt;th&gt;address&lt;/th&gt;
+				-- table header -- will used only once to show headings of table
+			&lt;/tr&gt;
+		&lt;/thead&gt;
+		-- table head ends here --
+			--- comment ---
+			
+		&lt;tbody&gt;
+		-- table body starts from here -- 
+			&lt;tr&gt;
+			-- another row -- this will contain data in it
+				&lt;td&gt;Viraj&lt;/td&gt;
+				&lt;td&gt;123456XXXX&lt;/td&gt;
+				&lt;td&gt;xyz@gmail.com&lt;/td&gt;
+				&lt;td&gt;123, street city state&lt;/td&gt;
+				-- table data -- data will be stored using it
+			&lt;/tr&gt;
+		&lt;/tbody&gt; 
+		-- table body ends here --
+		&lt;/table&gt;
+	&lt;/div&gt;
+&lt;/body&gt;</code></pre><p id="afe4d4ca-aab4-45ba-9c95-437c9465572e" class="">these tags make code writing better whenever dealing with tables in web page.</p><p id="b2a595e0-a9c9-49be-a223-109217ec2d56" class="">
+</p><h3 id="0475749b-e616-4eab-9fdf-5e3a5a0ac8f9" class=""><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>C</mi><mi>o</mi><mi>l</mi><mi>s</mi><mi>p</mi><mi>a</mi><mi>n</mi></mrow><annotation encoding="application/x-tex">Colspan</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.07153em;">C</span><span class="mord mathnormal">o</span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mord mathnormal">s</span><span class="mord mathnormal">p</span><span class="mord mathnormal">an</span></span></span></span></span><span>﻿</span></span> Attribute </h3><ul id="ab3646c9-5e7e-4d87-ac56-0183a512f550" class="bulleted-list"><li style="list-style-type:disc">It is a attribute used to say that → this header <code>&lt;th colspan=’2’&gt;</code> will take place of two columns.</li></ul><p id="de2a5406-20ad-4a10-9218-b3ece15cbb11" class="">
+</p><h1 id="94d0bd74-e777-452c-b227-781e528f2504" class="">Forms in HTML</h1><p id="2a5e8432-4ffd-41a6-be22-4f955222026d" class="">HTML forms are used to collect user input. The <code>&lt;form&gt;</code> tag is used to create an HTML form.</p><h2 id="c2e1be71-f016-40a6-aa77-d32f5fb7a05c" class="">Form Tags</h2><ul id="50b21ea1-0b44-4fed-9496-26247dc6a8cb" class="bulleted-list"><li style="list-style-type:disc"><code>&lt;form&gt;</code>: This tag defines a form.</li></ul><ul id="91360b81-9295-4d86-b0f5-90dc5709089d" class="bulleted-list"><li style="list-style-type:disc"><code>&lt;input&gt;</code>: This tag is the most used form tag. An <code>&lt;input&gt;</code> element can be displayed in many ways, depending on the <code>type</code> attribute.</li></ul><ul id="c36f9540-1be0-4099-b024-3aa9b1c09ab5" class="bulleted-list"><li style="list-style-type:disc"><code>&lt;textarea&gt;</code>: The <code>&lt;textarea&gt;</code> tag defines a multi-line text input control.</li></ul><ul id="53d1bad6-eaba-40d8-8e64-a97e0e83ff30" class="bulleted-list"><li style="list-style-type:disc"><code>&lt;button&gt;</code>: The <code>&lt;button&gt;</code> tag defines a clickable button.</li></ul><ul id="4b0021b1-f178-4029-9d42-a1940aea8dec" class="bulleted-list"><li style="list-style-type:disc"><code>&lt;select&gt;</code>: The <code>&lt;select&gt;</code> tag is used to create a drop-down list.</li></ul><ul id="41a0c450-6801-466a-9ad1-0dd7dc30b33f" class="bulleted-list"><li style="list-style-type:disc"><code>&lt;optgroup&gt;</code>: The <code>&lt;optgroup&gt;</code> tag is used to group related options in a drop-down list.</li></ul><ul id="e48dab0c-41fe-4ebe-a585-6cbc2acc3382" class="bulleted-list"><li style="list-style-type:disc"><code>&lt;option&gt;</code>: The <code>&lt;option&gt;</code> tag defines an option in a select list.</li></ul><ul id="2c95703c-2b7f-4607-ba19-2da13482e3a8" class="bulleted-list"><li style="list-style-type:disc"><code>&lt;label&gt;</code>: The <code>&lt;label&gt;</code> tag defines a label for many form elements.</li></ul><h2 id="53d360a5-5355-41c7-baab-5f13180bc7af" class="">Input Types</h2><p id="d3e3748f-e6b2-4f7c-8321-d7deffbe9f4a" class="">Here are some of the different types of input:</p><ul id="6726bbc6-e3e8-41aa-9cac-ede3b3746fca" class="bulleted-list"><li style="list-style-type:disc"><code>&lt;input type=&quot;text&quot;&gt;</code> : For textual input.</li></ul><ul id="732029b0-56f3-42de-b134-93d35b36fdd2" class="bulleted-list"><li style="list-style-type:disc"><code>&lt;input type=&quot;radio&quot;&gt;</code> : For a radio button (select only one of several options).</li></ul><ul id="fd0b5829-a2ce-41b7-8cfd-e90d6e617f44" class="bulleted-list"><li style="list-style-type:disc"><code>&lt;input type=&quot;checkbox&quot;&gt;</code> : For a checkbox (select zero or more of several options).</li></ul><ul id="7446e802-4163-4044-9b9d-845d0a00769c" class="bulleted-list"><li style="list-style-type:disc"><code>&lt;input type=&quot;submit&quot;&gt;</code> : For a submit button (to submit the form).</li></ul><p id="d42c9d1e-ac33-46df-a91c-8c5d07583662" class="">Every <code>&lt;input&gt;</code> element in a form has a <code>name</code> attribute to identify them.</p><h2 id="64b9d998-fabc-481a-8c9e-714d0bfc9036" class="">Form Attributes</h2><p id="9843dbdc-380f-47be-bf72-3c3551d5ba81" class="">HTML form tags have several attributes such as <code>action</code>, <code>method</code>, and <code>target</code>.</p><ul id="8fbf3607-e934-48f0-8798-13c1a1605129" class="bulleted-list"><li style="list-style-type:disc"><code>action</code>: Specifies where to send the form data when a form is submitted. Often, the form data is sent to a page on the server when the user clicks on the submit button.</li></ul><ul id="e3882ead-37b1-49fa-ae65-966be03aa78a" class="bulleted-list"><li style="list-style-type:disc"><code>method</code>: Specifies the HTTP method to use when sending form data. The method can be <code>GET</code> or <code>POST</code>.</li></ul><ul id="6e11f94e-c544-498f-b824-c8fc13c1f557" class="bulleted-list"><li style="list-style-type:disc"><code>target</code>: Specifies where to display the response after submitting the form. This attribute is used with <code>iframe</code>.</li></ul><p id="a35425ca-3e90-447a-acf5-4b4e2be21ba0" class="">Example:</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="effe772a-1052-4118-a516-13318a05ed9c" class="code"><code class="language-HTML" style="white-space:pre-wrap;word-break:break-all">&lt;form action=&quot;/submit_form&quot; method=&quot;post&quot; target=&quot;_blank&quot;&gt;
+  &lt;label for=&quot;fname&quot;&gt;First name:&lt;/label&gt;
+
+  &lt;input type=&quot;text&quot; id=&quot;fname&quot; name=&quot;fname&quot;&gt;
+
+  &lt;input type=&quot;submit&quot; value=&quot;Submit&quot;&gt;
+&lt;/form&gt;
+</code></pre><p id="1ace6317-a852-4e92-9a76-d6896d5542c4" class="">This form when submitted, would send the user&#x27;s first name to the &quot;<code>/submit_form</code>&quot; page on the server, which would open in a new tab or window.</p><p id="af628d0b-fa60-42a8-b357-aa0a4d386e40" class="">
+</p><p id="47545797-1dc1-40b2-8afa-65b8587e4ff8" class=""><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><mi>e</mi><mi>c</mi><mi>a</mi><mi>p</mi></mrow><annotation encoding="application/x-tex">Recap</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8778em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.00773em;">R</span><span class="mord mathnormal">ec</span><span class="mord mathnormal">a</span><span class="mord mathnormal">p</span></span></span></span></span><span>﻿</span></span></p><p id="d132404d-45d7-4aee-a249-b1a7e356c3c5" class="">HTML Form → A form is use to collect information/ or take inputs &lt;form&gt; tag is used for that.</p><p id="fd0f4634-37b3-4b35-b177-10487ddd3acb" class="">Form tag - has <code>action</code> attribute in it that specifies where to send the data after successful inputs.</p><p id="8739e8c6-594b-4258-aa08-6e59bf676ee2" class="">Now there comes elements that use to take inputs in different forms</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="b12df61b-98ea-4f25-9f11-cf235ad560e5" class="code"><code class="language-HTML">&lt;label for=&quot;nameid&quot;&gt;Name:&lt;/label&gt;
+&lt;input type=&quot;text&quot; placeholder=&quot;enter your name&quot; id=&quot;nameid&quot; name=&quot;name&quot;&gt;
+
+Here &lt;label&gt; tag has &#x27;for&#x27; attribute that stores &#x27;input id&#x27; it must match the
+exact id it is storing. 
+&lt;label&gt;Name&lt;/label&gt; it is opening n closing tag
+
+&lt;input&gt; tag is only opening tag, that has a type=&quot;text&quot; that indicates it will take text
+inputs only.
+Next Attribute here is placeholder that holds a some text value.
+
+&quot;id&quot; is another attribute that stores same id as writen in &quot;for&quot;
+
+&quot;name&quot; now name attribute is use to store the name of the input field by which we are
+using it.</code></pre><p id="99a43ad7-1635-4221-8d09-b12208da1614" class="">
+</p><p id="f79fecfc-3414-425d-8b3a-f57e4012aa67" class="">This code block presents a set of radio buttons, which allow the user to select only one option from a list.</p><p id="78541a16-4c79-4a71-a4c1-9ff746aa26f7" class="">The <code>&lt;label&gt;</code> tags are used to provide a descriptive text for each radio button. The <code>for</code> attribute in the <code>&lt;label&gt;</code> tag associates the label with a specific radio button. This attribute value should match the <code>id</code> attribute of the associated radio button.</p><p id="f7026902-05fc-4b04-a511-2e7c0898ff64" class="">Inside each <code>&lt;label&gt;</code> tag, an <code>&lt;input&gt;</code> tag of type &quot;radio&quot; is used to create the actual radio button.</p><ul id="e6b4efa4-62ea-4ef3-a31a-b269e9bcd56b" class="bulleted-list"><li style="list-style-type:disc">The <code>type=&quot;radio&quot;</code> attribute specifies that this input should be rendered as a radio button.</li></ul><ul id="58a71cc1-9ad6-4abe-a445-20cdc501150b" class="bulleted-list"><li style="list-style-type:disc">The <code>id</code> attribute uniquely identifies each radio button. This is useful for associating the <code>&lt;label&gt;</code> with the correct <code>&lt;input&gt;</code> tag and for manipulating the radio button with JavaScript or CSS.</li></ul><ul id="b052d1d0-98d0-4be9-85ab-1f717f4ddcb2" class="bulleted-list"><li style="list-style-type:disc">The <code>name</code> attribute groups the radio buttons together. All radio buttons with the same <code>name</code> attribute are considered part of the same group, and only one can be selected at a time. In this case, all three radio buttons have the name &quot;only one&quot;, so the user can select only one of these three options.</li></ul><ul id="61a072bf-0383-4513-b9f8-d09a75e50c7f" class="bulleted-list"><li style="list-style-type:disc">The <code>value</code> attribute assigns a value to each radio button. This value is sent to the server when the form is submitted. The value is usually something that helps the server process the form data correctly.</li></ul><p id="7f44b0e3-30c6-4c93-941b-c8f5c9fd9bfd" class="">The text following the <code>&lt;input&gt;</code> tag within the <code>&lt;label&gt;</code> tag (&quot;Option 1&quot;, &quot;Option 2&quot;, &quot;Option 3&quot;) provides a human-readable description for each radio button.</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="d439a1ef-b240-4e62-a029-4447ec878c59" class="code"><code class="language-HTML">                    &lt;label for=&quot;radioid1&quot;&gt;
+                        &lt;input type=&quot;radio&quot; id=&quot;radioid1&quot; name=&quot;only one&quot; value=&quot;radio 1&quot;&gt;Option 1
+                    &lt;/label&gt;
+                    &lt;label for=&quot;radioid2&quot;&gt;
+                        &lt;input type=&quot;radio&quot; id=&quot;radioid2&quot; name=&quot;only one&quot; value=&quot;radio 2&quot;&gt;Option 2
+                    &lt;/label&gt;
+                    &lt;label for=&quot;radioid3&quot;&gt;
+                        &lt;input type=&quot;radio&quot; id=&quot;radioid3&quot; name=&quot;only one&quot; value=&quot;radio 3&quot;&gt;Option 3
+                    &lt;/label&gt;</code></pre><p id="d33fbc28-70c8-4f63-8162-2c5f4788b9eb" class="">
+</p><p id="e68d9f0a-7b56-4e03-b874-016e6bad2096" class="">This code block represents a set of checkboxes, which allow the user to select multiple options from a list.</p><p id="fe4a155a-51f0-4ffb-9ddd-ca69ac381504" class="">Each checkbox is created using the <code>&lt;input&gt;</code> tag with a <code>type=&quot;checkbox&quot;</code> attribute.</p><p id="9889954f-2efd-4008-af2b-9ff50057ac08" class="">The <code>&lt;label&gt;</code> tags are used to provide descriptive text for each checkbox. The <code>for</code> attribute in the <code>&lt;label&gt;</code> tag associates the label with a specific checkbox. This attribute value should match the <code>id</code> attribute of the associated checkbox.</p><p id="aecddce0-ca37-40d2-b4ca-fa03eacfbdc6" class="">Inside each <code>&lt;label&gt;</code> tag, an <code>&lt;input&gt;</code> tag of type &quot;checkbox&quot; is used to create the actual checkbox.</p><ul id="add60b26-6f54-4ee0-8b13-e11f5930924b" class="bulleted-list"><li style="list-style-type:disc">The <code>type=&quot;checkbox&quot;</code> attribute specifies that this input should be rendered as a checkbox.</li></ul><ul id="bd8a67e2-b294-4a14-9d83-5b91a66f74b2" class="bulleted-list"><li style="list-style-type:disc">The <code>id</code> attribute uniquely identifies each checkbox. This is useful for associating the <code>&lt;label&gt;</code> with the correct <code>&lt;input&gt;</code> tag and for manipulating the checkbox with JavaScript or CSS.</li></ul><ul id="38f14c5f-afef-43a6-b582-460fbafb3ada" class="bulleted-list"><li style="list-style-type:disc">The <code>name</code> attribute groups the checkboxes together. All checkboxes with the same <code>name</code> attribute are considered part of the same group, and multiple can be selected at a time. In this case, all three checkboxes have the name &quot;<code>groupcheckbox</code>&quot;, so the user can select any of these three options.</li></ul><ul id="c238a111-3938-4d12-9006-76d98dcf949e" class="bulleted-list"><li style="list-style-type:disc">The <code>class</code> attribute is used to apply CSS styles to the checkboxes.</li></ul><p id="df5a6ae6-e82b-4b13-8b1e-f669b27aca67" class="">The text following the <code>&lt;input&gt;</code> tag within the <code>&lt;label&gt;</code> tag (&quot;You want 1?&quot;, &quot;You want 2?&quot;, &quot;You want 3?&quot;) provides a human-readable description for each checkbox.</p><p id="0154d38e-cfe9-4f89-8ede-5802760aa122" class="">
+</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="fe973616-831a-4abc-8a41-801a214d2b05" class="code"><code class="language-HTML">&lt;p&gt;These are the checkboxes, you may select more than one&lt;/p&gt;
+                    &lt;label for=&quot;checkboxid&quot;&gt;
+                        &lt;input type=&quot;checkbox&quot; id=&quot;checkboxid&quot; name=&quot;groupcheckbox&quot; class=&quot;checkbox&quot;&gt; You want 1?
+                    &lt;/label&gt;
+                    &lt;label for=&quot;checkboxid2&quot;&gt;
+                        &lt;input type=&quot;checkbox&quot; id=&quot;checkboxid2&quot; name=&quot;groupcheckbox&quot; class=&quot;checkbox&quot;&gt; You want 2?
+                    &lt;/label&gt;
+                    &lt;label for=&quot;checkboxid3&quot;&gt;
+                        &lt;input type=&quot;checkbox&quot; id=&quot;checkboxid3&quot; name=&quot;groupcheckbox&quot; class=&quot;checkbox&quot;&gt; You want 3?
+                    &lt;/label&gt;</code></pre><p id="a96146c0-7df0-4af4-8b14-3030b60170a4" class="">
+</p><p id="814aff30-abfa-4287-9244-bf42a720b210" class="">This code block represents a text area field that allows the user to enter multi-line text.</p><p id="200ddb59-d86f-4fc7-94fa-565735188e50" class="">The <code>&lt;label&gt;</code> tag is used to provide a descriptive text for the text area. The <code>for</code> attribute in the <code>&lt;label&gt;</code> tag associates the label with the specific text area. This attribute value should match the <code>id</code> attribute of the associated text area.</p><p id="70616b5f-fbdd-4f4f-b414-16d4acfbf7c5" class="">The <code>&lt;textarea&gt;</code> tag is used to create the actual text area.</p><ul id="e87b6fe3-4fc8-4ccb-8bad-77d510db9b6d" class="bulleted-list"><li style="list-style-type:disc">The <code>id</code> attribute uniquely identifies the text area. This is useful for associating the <code>&lt;label&gt;</code> with the correct <code>&lt;textarea&gt;</code> tag and for manipulating the text area with JavaScript or CSS.</li></ul><ul id="1d8bf315-ba37-4deb-90dd-2c6f659b7a86" class="bulleted-list"><li style="list-style-type:disc">The <code>cols</code> and <code>rows</code> attributes define the visible width and height of the text area, in average character widths and line heights respectively.</li></ul><ul id="9dc6742f-d1d7-4805-8b74-6980ed381379" class="bulleted-list"><li style="list-style-type:disc">The <code>name</code> attribute is used to reference the form data after a form is submitted.</li></ul><ul id="781e0187-81f7-43d3-8f83-c59d1bcd35b3" class="bulleted-list"><li style="list-style-type:disc">The <code>placeholder</code> attribute provides a short hint that describes the expected value of the text area. It is displayed in the text area before the user enters a value.</li></ul><p id="d5a44a95-b39c-47ae-a1c6-ecf8a3569811" class="">The text between the <code>&lt;textarea&gt;</code> and <code>&lt;/textarea&gt;</code> tags (&quot;start writing here!&quot;) is the default text which is displayed when the text area is initially displayed.</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="e5f0820c-2188-447a-a0dc-129fd66f62c4" class="code"><code class="language-HTML" style="white-space:pre-wrap;word-break:break-all">&lt;label for=&quot;textAreaId&quot;&gt;Tell us why you are here?&lt;/label&gt;
+&lt;textarea id=&quot;textAreaId&quot; cols=&quot;40&quot; rows=&quot;10&quot; name=&quot;txtarea&quot; placeholder=&quot;start writing here!&quot;&gt;&lt;/textarea&gt;
+</code></pre><p id="bcc3600d-fa1a-4e79-813b-f1cae30ca7db" class="">
+</p><p id="84717caa-13c8-4588-bf65-68e82103684b" class="">
+</p><p id="cb75e9d1-00fb-4a8d-94c5-9e674dfe7619" class="">This code block represents a dropdown list, which allows the user to select one option from a list.</p><p id="843c8a3a-3097-4982-a082-7b4f56367e8d" class="">The <code>&lt;label&gt;</code> tag is used to provide a descriptive text for the dropdown list. The <code>for</code> attribute in the <code>&lt;label&gt;</code> tag associates the label with the specific dropdown list. This attribute value should match the <code>id</code> attribute of the associated dropdown list.</p><p id="baf685c3-a9c8-46aa-aaca-ac576c3d1a44" class="">The <code>&lt;select&gt;</code> tag is used to create the actual dropdown list.</p><ul id="b1ecdd83-7ece-4479-b109-1666fed26234" class="bulleted-list"><li style="list-style-type:disc">The <code>id</code> attribute uniquely identifies the dropdown list. This is useful for associating the <code>&lt;label&gt;</code> with the correct <code>&lt;select&gt;</code> tag and for manipulating the dropdown list with JavaScript or CSS.</li></ul><ul id="3dd72f05-775d-4ae5-b307-976def409693" class="bulleted-list"><li style="list-style-type:disc">The <code>name</code> attribute is used to reference the form data after a form is submitted.</li></ul><p id="d9355611-6c9a-45bb-973c-e6296e9f751d" class="">Inside the <code>&lt;select&gt;</code> tag, multiple <code>&lt;option&gt;</code> tags are used to define the available options in the dropdown list.</p><ul id="809fa6b7-ded2-46c4-b97e-9dafe288d1b7" class="bulleted-list"><li style="list-style-type:disc">The <code>value</code> attribute defines the value to be sent to the server when the form is submitted.</li></ul><ul id="26332d7a-be18-4501-a69e-9231ee8eb302" class="bulleted-list"><li style="list-style-type:disc">The text between the <code>&lt;option&gt;</code> and <code>&lt;/option&gt;</code> tags (&quot;op1&quot;, &quot;op2&quot;, &quot;op3&quot;) provides a human-readable description for each option.</li></ul><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="d67e2d8b-a379-4c1c-8683-50ebf97fb336" class="code"><code class="language-HTML" style="white-space:pre-wrap;word-break:break-all">&lt;label for=&quot;SelectOption&quot;&gt;Choose from drop down list
+  &lt;select name=&quot;options&quot; id=&quot;SelectOption&quot;&gt;
+    &lt;option value=&quot;op1&quot;&gt;op1&lt;/option&gt;
+    &lt;option value=&quot;op2&quot;&gt;op2&lt;/option&gt;
+    &lt;option value=&quot;op3&quot;&gt;op3&lt;/option&gt;
+  &lt;/select&gt;
+&lt;/label&gt;
+</code></pre><p id="650fe08f-bfca-4b52-8cb8-b2f6687be772" class="">
+</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="58e2e3cd-b4d6-4dbe-a274-fb6e37c29e9d" class="code"><code class="language-HTML" style="white-space:pre-wrap;word-break:break-all">&lt;!-- iframe tag --&gt;
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;&lt;https://www.youtube.com/embed/BsDoLVMnmZs?si=8TYDj4ezVrRvpwuo&gt;&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&quot; referrerpolicy=&quot;strict-origin-when-cross-origin&quot; allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;!-- I copied this code from Youtube&gt;Share&gt;Embed Video, Youtube allows us to direct embed the video --&gt;
+
+&lt;!-- Now to embed the video from local system --&gt;
+
+
+
+&lt;iframe src=&quot;C:\\Users\\Dell\\Videos\\Captures\\OldPortfolio.mp4&quot; width=&quot;600&quot; height=&quot;300&quot; scrolling=&quot;no&quot; controls&gt;&lt;/iframe&gt; 
+</code></pre><ul id="8be76b32-2d54-4408-bad5-6a2fc5c1e012" class="bulleted-list"><li style="list-style-type:disc"><code>src</code>: Specifies the URL of the page to embed.</li></ul><ul id="19a59ae4-8550-4ac1-a854-5024c8a2ecaf" class="bulleted-list"><li style="list-style-type:disc"><code>title</code>: Specifies the title of the iframe which is used by screen readers.</li></ul><ul id="86994ba2-3cab-4fc1-b25b-cc3403e862aa" class="bulleted-list"><li style="list-style-type:disc"><code>width</code>: Specifies the width of the iframe.</li></ul><ul id="8a4f72f8-e40c-4c48-a58e-c520b8861732" class="bulleted-list"><li style="list-style-type:disc"><code>height</code>: Specifies the height of the iframe.</li></ul><ul id="ef9d6ba2-aa5f-487c-b706-54141a8ca190" class="bulleted-list"><li style="list-style-type:disc"><code>frameborder</code>: Specifies whether or not to display a border around the iframe.</li></ul><ul id="5d2760ad-5490-4052-b73c-0ca8ee1c8a14" class="bulleted-list"><li style="list-style-type:disc"><code>allow</code>: Specifies a feature policy for the iframe.</li></ul><ul id="fdad5038-627c-4170-99ec-d338cee002fc" class="bulleted-list"><li style="list-style-type:disc"><code>referrerpolicy</code>: Specifies which referrer information to send when fetching the iframe&#x27;s resource.</li></ul><ul id="e6280e27-fba2-4693-b0ce-9d84b6953e04" class="bulleted-list"><li style="list-style-type:disc"><code>allowfullscreen</code>: Specifies that the iframe should support full-screen mode.</li></ul><ul id="79992ea2-84ac-47a9-bab8-19c25415ec61" class="bulleted-list"><li style="list-style-type:disc"><code>scrolling</code>: Specifies whether or not to display scrollbars in the iframe.</li></ul><ul id="b0527f3b-ea5e-4abe-9d23-82f082af1142" class="bulleted-list"><li style="list-style-type:disc"><code>controls</code>: Specifies that video controls should be displayed (like a play/pause button).</li></ul><ul id="b9e7ca29-1ce0-49cd-860f-e821f3525f81" class="bulleted-list"><li style="list-style-type:disc"><code>autoplay</code>: Specifies that the video will start playing as soon as it is ready.</li></ul><ul id="2e3ec532-1bb8-4efc-9d1a-ffc9f1b73839" class="bulleted-list"><li style="list-style-type:disc"><code>loop</code>: Specifies that the video will start over again, every time it is finished.</li></ul><p id="745dbac0-edf9-4de8-80ff-9eef28135f24" class="">
+</p><h2 id="b530dc41-ecf6-4279-9ce7-ed6b5bea25b5" class="">Writing for SEO</h2><p id="6b926473-20a9-484e-bbce-f7012cced9e4" class="">Search Engine Optimization (SEO) is a vital part of any website&#x27;s success. When writing HTML for SEO, keep these tips in mind:</p><ul id="9819b5cb-9015-4308-8a57-fd3f91485d1d" class="bulleted-list"><li style="list-style-type:disc">Include relevant keywords in your content, but use them naturally and don&#x27;t overdo it.</li></ul><ul id="9d411db9-0b90-42e6-9c25-331fc562ed10" class="bulleted-list"><li style="list-style-type:disc">Use header tags (<code>&lt;h1&gt;</code> to <code>&lt;h6&gt;</code>) to structure your content. Search engines use these tags to understand the content on your page.</li></ul><ul id="5aabede1-7cc4-4300-9241-a9199bf0d5f9" class="bulleted-list"><li style="list-style-type:disc">Use the <code>&lt;title&gt;</code> tag to set a meaningful and concise title for each page. This title is displayed in search engine results and browser tabs.</li></ul><ul id="669f3c55-f5f0-467e-abbd-dfc3a6634c36" class="bulleted-list"><li style="list-style-type:disc">Use the <code>&lt;meta name=&quot;description&quot;&gt;</code> tag to provide a brief summary of the page. This description may appear in search engine results.</li></ul><h2 id="e8df1727-d50b-414b-9763-f4f8c02f7c45" class="">Meta Tags</h2><p id="74da7158-1949-44da-907b-7e1a17847fdc" class="">Meta tags give search engines more information about a page. Here are a few important ones:</p><ul id="9921ea44-12cd-471e-9e11-8ef8504d1bfe" class="bulleted-list"><li style="list-style-type:disc"><code>&lt;meta charset=&quot;UTF-8&quot;&gt;</code>: This tag should be the first thing in your <code>&lt;head&gt;</code> section. It specifies the character encoding for the page, which is important for the correct display of text.</li></ul><ul id="3cab20dc-1bb4-45a1-a305-65271df38e6a" class="bulleted-list"><li style="list-style-type:disc"><code>&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;</code>: This tag makes your website look good on all devices (desktops, tablets, and phones).</li></ul><ul id="d3d17620-f62e-4812-8150-4b818ef20206" class="bulleted-list"><li style="list-style-type:disc"><code>&lt;meta name=&quot;description&quot; content=&quot;Page description. No longer than 155 characters.&quot;&gt;</code>: This tag provides a description of the page, and is often displayed in search engine results.</li></ul><h2 id="227b9855-27e2-4971-a69c-49da1fbc3708" class="">Favicon</h2><p id="cfb78c5a-4f8a-4dd1-b341-61a463ca80e4" class="">A favicon is a small icon that appears next to your website&#x27;s name in the browser tab. It helps users identify your website and stands out in bookmarks. Use the link tag in your <code>&lt;head&gt;</code> section to include a favicon:</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="7ac41a51-555d-4f8b-97e5-16aba0c62763" class="code"><code class="language-HTML" style="white-space:pre-wrap;word-break:break-all">&lt;link rel=&quot;icon&quot; href=&quot;favicon.ico&quot; type=&quot;image/x-icon&quot;&gt;
+</code></pre><p id="5fd06293-181d-41dd-b03b-169818bc5b8e" class="">Remember, the file <code>favicon.ico</code> should be in the same directory as your HTML file. Be sure to replace <code>&quot;favicon.ico&quot;</code> with the path to your own favicon.</p><h2 id="3b3245d1-29e1-45f0-9b0b-fcaedbd3eb86" class="">Conclusion</h2><p id="64b0cd11-7aca-4edf-849d-54afd2afa9c0" class="">Writing HTML with SEO in mind can greatly increase your site&#x27;s visibility and ranking in search engine results. Always remember to use meta tags, a favicon, and structure your content appropriately.</p><p id="24b5dd6b-0c08-4aa9-8472-278de471202f" class="">Apart from the ones mentioned in the document, here are some more meta tags that can be used in HTML:</p><ul id="f8a47451-e1c4-4e2f-befb-a79d63efc0b0" class="bulleted-list"><li style="list-style-type:disc"><code>&lt;meta name=&quot;keywords&quot; content=&quot;HTML, CSS, JavaScript&quot;&gt;</code>: This tag is used to specify keywords that represent the content of the site. However, it&#x27;s worth noting that Google doesn&#x27;t use the keywords meta tag in web ranking.</li></ul><ul id="ef4b921e-97c9-48e5-9032-ef94bfc36192" class="bulleted-list"><li style="list-style-type:disc"><code>&lt;meta http-equiv=&quot;refresh&quot; content=&quot;30&quot;&gt;</code>: This tag is used to refresh the current page after a specified number of seconds.</li></ul><ul id="95118d6d-eb2e-493f-b387-2e9fca471655" class="bulleted-list"><li style="list-style-type:disc"><code>&lt;meta name=&quot;author&quot; content=&quot;John Doe&quot;&gt;</code>: This tag is used to specify the author of the webpage.</li></ul><ul id="bc58611c-1d8e-4bfb-8933-97123103c1bc" class="bulleted-list"><li style="list-style-type:disc"><code>&lt;meta name=&quot;robots&quot; content=&quot;noindex, nofollow&quot;&gt;</code>: This tag is used to control how search engine bots crawl and index a page.</li></ul><ul id="e5dc3936-a922-4867-ab54-3a44c5a648c1" class="bulleted-list"><li style="list-style-type:disc"><code>&lt;meta name=&quot;google&quot; content=&quot;nositelinkssearchbox&quot; /&gt;</code>: This tag can be used to prevent Google from displaying a sitelinks search box in the search engine results page.</li></ul><ul id="b1429ad2-bc3d-45b9-b334-1b473313840d" class="bulleted-list"><li style="list-style-type:disc"><code>&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1, maximum-scale=1&quot;&gt;</code>: This tag is used for responsive web design. It controls the viewport size on mobile devices.</li></ul><p id="435b53c9-50c5-4017-ba5b-06b82e64ffd3" class="">
+</p><hr id="8acf34f8-bbb8-4c00-a4a8-33593aba822c"/><p id="cc4be392-3fbe-4b55-9618-2cf0c7fc83cf" class="">Completed!</p><p id="2ddf2363-6552-40a3-8359-e2b81fd88305" class="">
+</p><h2 id="ff3d6b2f-f3b6-4b54-ba1c-796974b2d7df" class="">Creating a moving notice bar</h2><p id="da55bc92-d47d-4c0d-a1bb-230dd8a41a07" class="">In previous versions of html → Marquee tag is use to create the sliding bars. that is now deprecated.</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="4fa23dfc-827b-437d-bae7-ec212684eb97" class="code"><code class="language-HTML">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;UTF-8&quot;&gt;
+&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+&lt;title&gt;Running Notice Bar&lt;/title&gt;
+&lt;style&gt;
+    /* Optional: Style the container */
+    .notice-container {
+        width: 100%;
+        background-color: #f0f0f0;
+        padding: 10px;
+        overflow: hidden;
+    }
+
+    /* Optional: Style the text */
+    .notice-text {
+        color: #333;
+        font-size: 16px;
+    }
+
+    /* Optional: Add animation to the text */
+    .marquee {
+        animation: marquee 45s linear infinite;
+    }
+
+    @keyframes marquee {
+        0% {
+            transform: translateX(100%);
+        }
+        100% {
+            transform: translateX(-100%);
+        }
+    }
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;div class=&quot;notice-container&quot;&gt;
+    &lt;div class=&quot;marquee&quot;&gt;
+        &lt;span class=&quot;notice-text&quot;&gt;&lt;a href=&quot;index.html&quot;&gt;This is a running notice bar. This text will scroll from right to left.&lt;/a&gt;&lt;/span&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre><p id="464fdf67-ce4f-4542-9f56-08e81ee13d0e" class="">In Html5, we don’t use marquee tag to do so, instead CSS is applied to make a moving/scrolling bar.</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="5508c671-a563-47fa-96b6-0774e3a7c6a2" class="code"><code class="language-HTML" style="white-space:pre-wrap;word-break:break-all">    &lt;div class=&quot;noticebar&quot;&gt;
+        &lt;div class=&quot;scrollingtext&quot;&gt;
+        &lt;a class=&quot;movingtext&quot; href=&quot;documents.html&quot;&gt;&lt;span style=&quot;color:red&quot;&gt;(new*)&lt;/span&gt; Here are some documents or blogs that will help you learn coding. Click here to view!&lt;/a&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    
+Now add some CSS to the html code...
+    
+.noticebar{
+    width: 100%;
+    background-color: #f0f0f0;
+    overflow: hidden;
+}
+
+.scrollingtext{
+    white-space: nowrap;
+    animation: scroll-left 45s linear infinite;
+}
+
+.movingtext{
+    text-decoration: none;
+    color: black;
+}
+
+@keyframes scroll-left {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+</code></pre><p id="15c1b0fa-53cd-4f97-8716-ef32ce995b43" class="">So this is how I created a moving notice/text bar.</p><p id="deb9a84a-0201-4998-ac7d-d7612857b797" class="">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
