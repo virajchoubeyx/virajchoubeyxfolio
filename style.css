@@ -133,8 +133,9 @@ button {
 
 .scrollingtext{
     white-space: nowrap;
-    animation: scroll-left 45s linear infinite;
+    animation: scroll-left 25s linear infinite;
 }
+
 
 .movingtext{
     text-decoration: none;
@@ -161,6 +162,9 @@ button {
         padding-right: 7px;
     }
 
+    .scrollingtext{
+        animation: scroll-left 10s linear infinite;
+    }
     /* everything for phone */
 
     .main-image {
