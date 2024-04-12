@@ -69,8 +69,15 @@ main {
 }
 
 #mypic {
-    width: 550px;
+    width:550px;
     margin-left: auto;
+    max-height: fit-content;
+    @media only screen and (min-width:769px) and (max-width:1260px) {
+        height:70%;
+        width: 90%;
+        margin-left:auto;
+        margin-right: auto;
+    }
     margin-right: auto;
     margin-top: auto;
     margin-bottom: auto;
@@ -142,6 +149,20 @@ button {
     color: black;
 }
 
+.ngl-button{
+    text-align: center;
+    margin: 25px;
+    p{
+        text-align: center;
+    }
+    button{
+        width:145px;
+        height: 30px;
+        background-color:orangered;
+        align-items:  center;
+    }
+}
+
 @keyframes scroll-left {
     0% {
         transform: translateX(100%);
@@ -169,6 +190,7 @@ button {
 
     .main-image {
         width: 100%;
+        align-items: center;
     }
 
     .links {
@@ -187,8 +209,10 @@ button {
     }
 
     #logoid {
-        width: 300px;
-        /* display: block; */
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 70%;
     }
 
     p {
